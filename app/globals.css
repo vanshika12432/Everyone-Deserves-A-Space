@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================
+   THEME TOKENS: edit the colours here and the whole site updates.
+   Values are HSL triplets: "hue saturation% lightness%"
+   ========================================================== */
+:root, html.light {
+  --c-primary:  262 38% 48%;   /* main brand colour (buttons, links) */
+  --c-primary-fg: 0 0% 100%;   /* text on primary */
+  --c-accent:   12 78% 80%;    /* soft blush accent */
+  --c-tint:     258 45% 95%;   /* pale wash for sections */
+  --c-bg:       40 33% 98%;    /* page background */
+  --c-surface:  0 0% 100%;     /* cards */
+  --c-ink:      255 25% 16%;   /* body text */
+}
+html.dark {
+  --c-primary:  262 62% 74%;
+  --c-primary-fg: 255 30% 12%;
+  --c-accent:   12 55% 68%;
+  --c-tint:     255 22% 17%;
+  --c-bg:       255 26% 9%;
+  --c-surface:  255 22% 13%;
+  --c-ink:      40 20% 94%;
+}
+
+/* Wire the tokens into HeroUI's own variables */
+html.light, html.dark {
+  --heroui-primary: var(--c-primary);
+  --heroui-primary-foreground: var(--c-primary-fg);
+  --heroui-secondary: var(--c-accent);
+  --heroui-secondary-foreground: 255 25% 16%;
+  --heroui-background: var(--c-bg);
+  --heroui-foreground: var(--c-ink);
+  --heroui-content1: var(--c-surface);
+  --heroui-focus: var(--c-primary);
+}
+
+body { background: hsl(var(--c-bg)); color: hsl(var(--c-ink)); }
+h1, h2, h3 { font-family: var(--font-display), Georgia, serif; letter-spacing: -0.015em; }
+
+/* ---------- Hero: 3D collage ---------- */
+.stage { perspective: 1400px; }
+.plane { transform-style: preserve-3d; }
+.card3d { position: absolute; overflow: hidden; box-shadow: 0 30px 60px -20px hsl(var(--c-primary) / .45); }
+.c1 { transform: rotateY(-14deg) rotateX(5deg) translateZ(40px); animation: drift 9s ease-in-out infinite; }
+.c2 { transform: rotateY(-8deg) rotateX(4deg) translateZ(110px); animation: drift 11s ease-in-out -3s infinite; }
+.c3 { transform: rotateY(-18deg) rotateX(6deg) translateZ(80px); animation: drift 10s ease-in-out -6s infinite; }
+@keyframes drift { 50% { translate: 0 -14px; } }
+.orb { position: absolute; border-radius: 9999px; filter: blur(70px); opacity: .55; }
+@media (prefers-reduced-motion: reduce) { .card3d { animation: none; } }
