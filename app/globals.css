@@ -50,3 +50,65 @@ h1, h2, h3 { font-family: var(--font-display), Georgia, serif; letter-spacing: -
 @keyframes drift { 50% { translate: 0 -14px; } }
 .orb { position: absolute; border-radius: 9999px; filter: blur(70px); opacity: .55; }
 @media (prefers-reduced-motion: reduce) { .card3d { animation: none; } }
+
+/* ---------- Thicker buttons (edit these numbers to taste) ---------- */
+:root {
+  --btn-sm-h: 2.5rem;  --btn-sm-px: 1.25rem;   /* was 2rem  / 0.75rem */
+  --btn-md-h: 3rem;    --btn-md-px: 1.75rem;   /* was 2.5rem / 1rem   (default size) */
+  --btn-lg-h: 3.5rem;  --btn-lg-px: 2.25rem;   /* was 3rem  / 1.5rem  (size="lg") */
+}
+html [class~="min-w-16"][class~="h-8"]  { height: var(--btn-sm-h); padding-inline: var(--btn-sm-px); font-size: .875rem; font-weight: 600; }
+html [class~="min-w-20"][class~="h-10"] { height: var(--btn-md-h); padding-inline: var(--btn-md-px); min-width: 7rem;   font-size: 1rem;     font-weight: 600; }
+html [class~="min-w-24"][class~="h-12"] { height: var(--btn-lg-h); padding-inline: var(--btn-lg-px); min-width: 8.5rem; font-size: 1.125rem; font-weight: 600; }
+
+
+
+/* ===== Palette options: set <html data-palette="..."> to preview ===== */
+
+/* 1. Sage & Sand: grounded, natural, warm */
+html[data-palette="sage"] {
+  --c-primary: 158 30% 30%;  --c-primary-fg: 0 0% 100%;
+  --c-accent: 28 70% 78%;    --c-tint: 150 22% 94%;
+  --c-bg: 45 30% 97%;        --c-surface: 0 0% 100%;   --c-ink: 160 20% 14%;
+}
+html[data-palette="sage"].dark {
+  --c-primary: 155 35% 65%;  --c-primary-fg: 160 30% 10%;
+  --c-accent: 28 50% 65%;    --c-tint: 160 14% 16%;
+  --c-bg: 160 18% 8%;        --c-surface: 160 15% 12%; --c-ink: 45 20% 93%;
+}
+
+/* 2. Calm Ocean: trustworthy, clear, clinical-but-soft */
+html[data-palette="ocean"] {
+  --c-primary: 200 55% 32%;  --c-primary-fg: 0 0% 100%;
+  --c-accent: 175 45% 75%;   --c-tint: 200 40% 95%;
+  --c-bg: 200 25% 98%;       --c-surface: 0 0% 100%;   --c-ink: 210 30% 14%;
+}
+html[data-palette="ocean"].dark {
+  --c-primary: 195 60% 68%;  --c-primary-fg: 210 40% 10%;
+  --c-accent: 175 40% 55%;   --c-tint: 210 24% 16%;
+  --c-bg: 210 30% 8%;        --c-surface: 210 24% 12%; --c-ink: 200 20% 94%;
+}
+
+/* 3. Rose & Teal: gentle, welcoming, pastel */
+html[data-palette="rose"] {
+  --c-primary: 175 45% 28%;  --c-primary-fg: 0 0% 100%;
+  --c-accent: 350 70% 85%;   --c-tint: 350 50% 96%;
+  --c-bg: 20 40% 98%;        --c-surface: 0 0% 100%;   --c-ink: 190 25% 15%;
+}
+html[data-palette="rose"].dark {
+  --c-primary: 175 40% 62%;  --c-primary-fg: 190 30% 9%;
+  --c-accent: 350 40% 70%;   --c-tint: 190 16% 16%;
+  --c-bg: 190 22% 8%;        --c-surface: 190 18% 12%; --c-ink: 20 25% 94%;
+}
+
+/* 4. Plum & Peach: warm, personal, a step softer than the lavender */
+html[data-palette="plum"] {
+  --c-primary: 340 38% 38%;  --c-primary-fg: 0 0% 100%;
+  --c-accent: 25 80% 82%;    --c-tint: 20 60% 95%;
+  --c-bg: 30 40% 98%;        --c-surface: 0 0% 100%;   --c-ink: 340 25% 15%;
+}
+html[data-palette="plum"].dark {
+  --c-primary: 340 55% 76%;  --c-primary-fg: 340 30% 12%;
+  --c-accent: 25 55% 68%;    --c-tint: 340 18% 17%;
+  --c-bg: 340 22% 9%;        --c-surface: 340 18% 13%; --c-ink: 30 25% 94%;
+}

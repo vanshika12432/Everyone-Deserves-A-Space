@@ -17,8 +17,10 @@ export default function Hero() {
             {t.name}, online and in New Delhi.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button as={NextLink} href="/contact" color="primary" size="lg" radius="full">Book a session</Button>
-            <Button as={NextLink} href="/events" variant="bordered" color="primary" size="lg" radius="full">See upcoming events</Button>
+            <Button as={NextLink} href="/contact" className="font-semibold shadow-md shadow-primary/30 transition-all duration-200
+                hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/40 active:scale-95" color="primary" size="lg" radius="full">Book a session</Button>
+            <Button as={NextLink} href="/events" className="font-semibold shadow-md shadow-primary/30 transition-all duration-200
+                hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/40 active:scale-95" color="primary" variant="ghost" size="lg" radius="full">See upcoming events</Button>
           </div>
         </div>
 

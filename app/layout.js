@@ -15,6 +15,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+    // <html lang="en" data-palette="plum" suppressHydrationWarning className={`${display.variable} ${body.variable}`}>
     <html lang="en" suppressHydrationWarning className={`${display.variable} ${body.variable}`}>
       <body className="font-sans antialiased">
         <Providers>
